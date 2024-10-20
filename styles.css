@@ -9,8 +9,21 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 10px 20px;
-    text-align: center;
+    padding: 20px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Centers items vertically */
+}
+
+.profile-img {
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 20px; /* Adds space between the image and text */
+}
+
+.header-content {
+    flex-grow: 1; /* Allows header content to take available space */
+    text-align: center; /* Center the header content */
 }
 
 header nav ul {
@@ -30,9 +43,10 @@ header nav ul li a {
 
 section {
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
     background: #fff;
     border-radius: 5px;
+    max-width: 800px; /* Limits width for larger screens */
 }
 
 footer {
@@ -40,7 +54,38 @@ footer {
     padding: 10px;
     background: #333;
     color: #fff;
-    position: absolute;
+    position: relative; /* Changed to relative for proper footer position */
     bottom: 0;
     width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block; /* Stacks nav items on small screens */
+        margin: 10px 0; /* Adds space between nav items */
+    }
+
+    section {
+        margin: 10px; /* Reduces margin on smaller screens */
+        padding: 15px; /* Adjusts padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em; /* Smaller font size for header on mobile */
+    }
+
+    header p {
+        font-size: 1em; /* Adjusts font size for smaller screens */
+    }
+
+    header nav ul li {
+        margin: 5px 0; /* Further reduces margin on mobile */
+    }
+
+    footer {
+        padding: 8px; /* Adjust footer padding for mobile */
+    }
 }
